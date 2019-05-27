@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Namal | Admissions 2018</title>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="../../plugins/bootstrapvalidator/css/bootstrapValidator.min.css" rel="stylesheet">
+  <style>
+/*	.card-header{
+		background-color: #00897B !important;
+	}*/
+	
+	a.active{
+		background-color: #00695C !important;
+	}
+	.content-wrapper>.content{
+    padding: 3.6%;
+		margin-top: -3.5rem;
+		margin-bottom: -2rem;
+	}
+	.content-header{
+		padding: 2.5rem;
+		margin-top: -1.5rem;
+	}
+  .h1,h1{
+    color: #004D40;
+  }
+  label { 
+    font-family: Roboto Condensed, sans-serif; 
+    font-size: 17px;
+    color: #004D40;
+  }
+	.card{
+		margin-bottom : 1.5rem !important;
+	}
+	.input-group-text>.fas{
+		color: #00897B;
+	}
+	.input-group-text>.fa{
+		color: #00897B;
+	}
+	.select2-container--default .select2-selection--multiple .select2-selection__choice{
+		background-color: #00897B;
+		border-color : #00897B;
+	}
+
+  .select2-container--default .select2-results__option[aria-selected=true]
+  {
+    background-color: #d0ece7
+  }
+  .select2-container--default.select2-container--open{
+    border-color:#00897B
+  }
+  .nav-pills .nav-link {
+    color: #b9b9b9;
+  }
+  .sidebar-dark-primary .nav-header {
+    color: #fff;
+    background: inherit;
+  }
+  .nav-sidebar .nav-header {
+    font-size: 0.93rem;
+    padding: .5rem;
+  }
+  .brand-link {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .brand-image {
+    float: left;
+    line-height: .8;
+    max-height: 39px;
+    width: auto;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-top: -3px;
+  }
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .sidebar-dark-primary .nav-treeview > .nav-item > .nav-link.active, .sidebar-dark-primary .nav-treeview > .nav-item > .nav-link.active:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,.9);
+  }
+  .nav-sidebar > .nav-item .nav-icon {
+
+    text-align: center;
+    width: 2.4rem;
+    font-size: 1.4rem;
+    margin-right: .3rem;
+  }
+  .content-header h1 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+  .content-header .breadcrumb {
+    margin-top: 10px;
+    padding: 0;
+    background: 0 0;
+    line-height: 1.8rem;
+  }
+
+  .input-group-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .bg-secondary {
+
+    background-color: #343a40 !important;
+  }
+
+  .popover-header {
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #343a40;
+    border-bottom: 1px solid #fff;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+  }
+
+  .popover {
+    font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 270px;
+    text-align: center;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    white-space: normal;
+    font-size: .875rem;
+    word-wrap: break-word;
+    background-color: #343a40;
+    background-clip: padding-box;
+    border: 1px solid rgb(52, 58, 64);
+    border-radius: .3rem;
+    box-shadow: 0 .25rem .5rem rgb(52, 58, 64);
+  }
+
+  .small-box p {
+    font-size: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    color: #f3f3f3;
+  }
+  
+  .small-box > .small-box-footer {
+    position: relative;
+    text-align: center;
+    padding: 3px 0;
+    color: #fff;
+    color: rgba(255,255,255,.8);
+    display: block;
+    z-index: 10;
+    background: rgb(52, 58, 64);
+    text-decoration: none;
+  }
+
+  .alert-success, .bg-success, .label-success {
+    background-color: #1d8c39 !important;
+  }
+
+  .bg-success {
+      background-color: #00695ccc !important;
+  }
+
+  .card-info.card-outline {
+      border-top: 3px solid #25877b;
+  }
+
+  .btn-tool {
+      padding: .2rem .5rem;
+          padding-top: 0.2rem;
+          padding-right: 0.5rem;
+          padding-bottom: 0.2rem;
+          padding-left: 0.5rem;
+      font-size: 1.2rem;
+      background: 0 0;
+      color: #73c0b6;
+  }
+
+  .small-box h3 {
+      font-size: 36px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      white-space: nowrap;
+      padding: 0;
+  }
+
+  .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+      color: rgba(255, 255, 255, 0.9);
+  }
+
+  </style>  
+</head>
+
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="javascript:void(0)" class="nav-link" onclick="home()" id="homesec">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="javascript:void(0)" class="nav-link" onclick="contact()" id="contactdetails">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="../../dist/img/NamalLogo.png" alt="Namal College Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Admission Portal</span>
+    </a>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-header"> </li>
+          <!-- <li class="nav-item has-treeview menu-open"> -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-universal-access"></i>
+              <p>
+                Applicant Guide
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link active" onclick="criteria()" id="eligcriteria">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>Eligibility Criteria</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link" onclick="faqs()" id="faques">
+                  <i class="fas fa-question-circle nav-icon"></i>
+                  <p>FAQs</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-header">APPLICATION</li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link" onclick="personal()" id="personalInfo">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Personal Information
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link" onclick="program()" id="programdetails">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>
+                Program Details
+              </p>
+            </a>
+          </li>                   
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link" onclick="academic()" id="academicqual">
+              <i class="nav-icon fas fa-university"></i>
+              <p>
+                Academic Qualification
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+		  
+		  <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link" onclick="submitform()" id="submit">
+              <i class="nav-icon fas fa-paper-plane"></i>
+              <p>
+                Submit
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <!-- main form -->
+	<form id="main-form">
+
+    <!-- <div id="home" class="content-wrapper" style="display: none"> -->
+      <!-- Content Header (Page header) -->
+      <!-- <div class="container-fluid"> -->
+        <!-- <img class="img-fluid" src="https://www.namal.edu.pk/wp-content/uploads/2018/05/NKC-Initial.jpg"> -->
+      <!-- </div> -->
+    <!-- </div> -->
+
+    <div id="criteria" class="content-wrapper" style="display: block">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Eligibility Criteria</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#" style="color : #00897B">Home</a></li>
+            <li class="breadcrumb-item active">Eligibility Criteria</li>
+            </ol>
+          </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content" id="adminssionForm">
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-md-4">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>B.Sc.</h3>
+                  <h4>Computer Science</h4>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <div class="small-box-footer">
+                  <p align="justify">
+                    FSc (Pre-Engineering) or FSc (Math, Physics and Computer Science) or equivalent with at least 60% marks.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>B.Sc.</h3>
+                  <h4>Electrical Engineering</h4>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-ruler-vertical"></i>
+                </div>
+                <div class="small-box-footer">
+                  <p align="justify">
+                    FSc (Pre-Engineering) or equivalent with at least 60% marks.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>BBA</h3>
+                  <h4>Green Namal</h4>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="small-box-footer">
+                  <p align="justify">
+                    FA/FSc or equivalent with at least 60% marks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>ENTRY TEST REQUIREMENTS</h3>
+                  <h4>Result awaiting candidates can also apply</h4>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-list-alt"></i>
+                </div>
+                <div class="small-box-footer">
+                  <p align="justify">
+                    &nbsp;&#9638 &emsp;<strong>For Punjab domiciled applicants:</strong> Combined Entry test 2018 conducted by UET Lahore is valid. <br>
+                    &nbsp;&#9638 &emsp;<strong>For Non-Punjab domiciled applicants:</strong> Entry test conducted by any public sector university is valid.<br>
+                    &nbsp;&#9638 &emsp;<strong>For BBA applicants:</strong> NAT-I 2018 (Conducted by NTS) or any of the above given test is valid. <br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <div id="faq" class="content-wrapper" style="display: none">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Frequently Asked Questions</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#" style="color : #00897B">Home</a></li>
+            <li class="breadcrumb-item active">Faqs</li>
+            </ol>
+          </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">WHERE IS NAMAL COLLEGE? ARE THERE MULTIPLE CAMPUSES IN PAKISTAN?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                There is only one campus of Namal College, which is located in Mianwali District, 30 KM from Mianwali city on Talagang Road. It is 90 minute drive from motorway through Balkasar Interchange near Chakwal city. 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">WHAT PROGRAMS ARE OFFERED AT NAMAL COLLEGE AND WHAT IS THEIR DURATION?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                There are three 4-year undergraduate degree programs being offered at Namal College, i.e. BSc. Electrical Engineering, BSc. Computer Science and BBA.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">WHICH DEGREE WILL I BE AWARDED UPON GRADUATION FROM NAMAL COLLEGE?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                Namal College is now affiliated with the university of engineering & technology, Lahore and thereby the degree will also be awarded by the UET, Lahore.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">HOW DO I APPLY?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                You can apply by filling the online Admission Application at our website <a href="https://www.namal.edu.pk">www.namal.edu.pk</a> 
+              </div>
+            </div>
+          </div> 
+
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title"> IS THERE ANY APPLICATION FEE? HOW I HAVE TO PAY IT?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">              
+                Yes there is admission application fee. You have to pay a non-refundable admission application fee to be deposited at any branch of Habib Bank Limited in Pakistan. Please deposit PKR: 500 for applying into any/all the three programs.<br>
+                Once you have filled and submitted the online application, you will get a notification via email on your given e-mail address mentioning two things:<br>
+
+                &nbsp;&#9638 &emsp;Application Acceptance<br>
+                &nbsp;&#9638 &emsp;Link for attachment of scanned copy of the fee submitted bank challan form<br>
+
+                Once you have submitted the application form, just download the challan form from the website, get a print and deposit the fee at any Branch of HBL. Afterwards, attach & send a scanned soft copy of this bank challan through the link mentioned in point 2 above.<br>
+                Without attaching scanned copy of the challan form, your application will not be considered for admission.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">WHAT IS THE FEE STRUCTURE?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                The detail of the fee is available on the College website. The College reserves the right to amend fee structure with prior notification to the successful candidates. Also, tuition fee is subject to revision every academic year. 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">IS THERE ANY FINANCIAL SUPPORT / SCHOLARSHIP AVAILABLE?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                Yes, Namal provides merit & need-based financial support & scholarships. However, applications will be solicited after admission process.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">WILL THERE BE ANY ENTRY TEST?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">              
+                There will be no entry test exclusively conducted by Namal College this year. For details, please see the 'Eligibility Criteria' section. 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">HOW MANY SEATS ARE AVAILABLE FOR EACH PROGRAMME?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                There are at least 40 seats allocated for each program of BSc. Electrical Engineering, BSc. Computer Science and BBA. 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">ARE THERE ANY QUOTA SEATS IN NAMAL COLLEGE?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                No. Admission is strictly on merit basis, without any bias of gender, race, religion, or ethnicity. 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title"> IS THERE CO-EDUCATION IN NAMAL COLLEGE?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">              
+                Yes. Namal College has the distinction of being the first professional institution in the district that accords equal learning opportunities to both males and females. 
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">IS HOSTEL ACCOMMODATION AVAILABLE?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                Yes. There are separate hostels for males and females. They are situated a short drive away from the College, and students commute on College buses.  
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">IS NAMAL COLLEGE RECOGNIZED BY HEC & PEC?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                Yes. Namal College is a recognized institute by Higher Education Commission of Pakistan and Pakistan Engineering Council. All the formal controls, policies & standards of our academic programs, including admissions, as enshrined in the constitution of UET, Lahore will be applicable to academic year of 2017 onwards.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card card-info collapsed-card card-outline">
+              <div class="card-header">
+                <h3 class="card-title">I STILL HAVE SOME QUESTIONS. HOW CAN I SEEK FURTHER CLARIFICATIONS?</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" align="justify">
+                You can contact us via:<br>
+                &nbsp;&#9638 &emsp;Email: admissions@namal.edu.pk<br>
+                &nbsp;&#9638 &emsp;Phone: 0459-236995 Ext-130
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+    </div>
+
+  	<div id="personal" class="content-wrapper" style="display:none;">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Personal Information</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#" style="color : #00897B">Home</a></li>
+                <li class="breadcrumb-item active">Personal Information</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fas fa-user-tie"></i>&emsp;Applicant's Details</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                  <div class="card-body">
+                    <div class="row"> 
+                      <div class="col-sm-6 form-group">     
+                        <label for="studentName">Applicant's Full Name</label>                
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+                          </div>
+                          <input name="username" type="text" class="form-control" id="studentName" placeholder="Enter your full name" required>
+                        </div>                                        
+                      </div>
+                      <div class="col-sm-6"> 
+                        <label for="fatherName">Father's Name</label>                                          
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                          </div>
+                          <input name="username" type="text" class="form-control" id="fatherName" placeholder="Enter your father's name">
+                        </div>                                        
+                      </div>                                                                                                   
+                    </div>
+
+                    <div class="row"> 
+                      <div class="col-sm-6 form-group">     
+                        <label for="studentcnic">Applicant's CNIC / B-Form Number</label>                
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                          </div>
+                          <input name="cnic" type="text" class="form-control" id="studentcnic" placeholder="13-digit number without dashes">
+                        </div>                                        
+                      </div>
+                      <div class="col-sm-6 form-group"> 
+                        <label for="fathercnic">Parent / Guardian's CNIC Number</label>                                          
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                          </div>
+                          <input name="cnic" type="text" class="form-control" id="fathercnic" placeholder="13-digit number without dashes">
+                        </div>                                        
+                      </div>                                                                                                   
+                    </div>
+                    
+                    <div class="row"> 
+                      <div class="col-sm-4">     
+                        <label for="gender">Gender</label>
+                        <div class="form-group">
+                          <select name="gender" class="form-control select2" style="width: 100%;">
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
+                        </div>                                      
+                      </div>
+                      <div class="col-sm-4"> 
+                        <label for="dob">Date of Birth</label>                                          
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                            <input name="birthday" type="date" class="form-control float-right" >
+                          </div>
+                        </div>                                        
+                      </div> 
+                      <div class="col-sm-4"> 
+                        <label for="studentemail">Email Address</label>                                          
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                <i class="fa fa-envelope"></i>
+                              </span>
+                            </div>
+                            <input name="email" type="email" class="form-control" id="studentemail" placeholder="someone@example.com">
+                          </div>
+                        </div>                                        
+                      </div>                                                                                                                      
+                    </div> 
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fas fa-address-book"></i>&emsp;Contact Details</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                  <div class="card-body">
+                                    
+                    <div class="row"> 
+                      <div class="col-sm-6 form-group">     
+                        <label for="studentphone">Applicant's Mobile Number</label>                
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                          </div>
+                          <input name="phone" type="text" class="form-control" id="studentphone" placeholder="03xxxxxxxxx">
+                        </div>                                        
+                      </div>
+                      <div class="col-sm-6 form-group"> 
+                        <label for="fatherphone">Parent / Guardian's Mobile Number</label>                                          
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                          </div>
+                          <input name="phone" type="text" class="form-control" id="fatherphone" placeholder="03xxxxxxxxx">
+                        </div>                                        
+                      </div>                                                                                                   
+                    </div>
+
+                    <div class="row"> 
+                      <div class="col-sm-6 form-group">     
+                        <label for="postAddress">Postal Address</label>                
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-store-alt"></i></span>
+                          </div>
+                          <textarea name="address" class="form-control" rows="2" id="postAddress" placeholder="Enter ..."></textarea>
+                        </div>                                        
+                      </div>
+                      <div class="col-sm-6 form-group"> 
+                        <label for="permAddress">Permanent Address</label>                                          
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-home"></i></span>
+                          </div>
+                          <textarea name="address" class="form-control" rows="2" id="permAddress" placeholder="Enter ..."></textarea>
+                        </div>                                        
+                      </div>                                                                                                   
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label>Country</label>
+                        <div class="form-group">
+                          <select class="form-control select2" style="width: 100%;" disabled required>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AX">Åland Islands</option>
+                            <option value="AL">Albania</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AQ">Antarctica</option>
+                            <option value="AG">Antigua and Barbuda</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaijan</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
+                            <option value="BE">Belgium</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermuda</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia, Plurinational State of</option>
+                            <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                            <option value="BA">Bosnia and Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BV">Bouvet Island</option>
+                            <option value="BR">Brazil</option>
+                            <option value="IO">British Indian Ocean Territory</option>
+                            <option value="BN">Brunei Darussalam</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroon</option>
+                            <option value="CA">Canada</option>
+                            <option value="CV">Cape Verde</option>
+                            <option value="KY">Cayman Islands</option>
+                            <option value="CF">Central African Republic</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CX">Christmas Island</option>
+                            <option value="CC">Cocos (Keeling) Islands</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comoros</option>
+                            <option value="CG">Congo</option>
+                            <option value="CD">Congo, the Democratic Republic of the</option>
+                            <option value="CK">Cook Islands</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CI">Côte d'Ivoire</option>
+                            <option value="HR">Croatia</option>
+                            <option value="CU">Cuba</option>
+                            <option value="CW">Curaçao</option>
+                            <option value="CY">Cyprus</option>
+                            <option value="CZ">Czech Republic</option>
+                            <option value="DK">Denmark</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominican Republic</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egypt</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GQ">Equatorial Guinea</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estonia</option>
+                            <option value="ET">Ethiopia</option>
+                            <option value="FK">Falkland Islands (Malvinas)</option>
+                            <option value="FO">Faroe Islands</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="FI">Finland</option>
+                            <option value="FR">France</option>
+                            <option value="GF">French Guiana</option>
+                            <option value="PF">French Polynesia</option>
+                            <option value="TF">French Southern Territories</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="DE">Germany</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GR">Greece</option>
+                            <option value="GL">Greenland</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GP">Guadeloupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GG">Guernsey</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HM">Heard Island and McDonald Islands</option>
+                            <option value="VA">Holy See (Vatican City State)</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IS">Iceland</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IR">Iran, Islamic Republic of</option>
+                            <option value="IQ">Iraq</option>
+                            <option value="IE">Ireland</option>
+                            <option value="IM">Isle of Man</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italy</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japan</option>
+                            <option value="JE">Jersey</option>
+                            <option value="JO">Jordan</option>
+                            <option value="KZ">Kazakhstan</option>
+                            <option value="KE">Kenya</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="KP">Korea, Democratic People's Republic of</option>
+                            <option value="KR">Korea, Republic of</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="KG">Kyrgyzstan</option>
+                            <option value="LA">Lao People's Democratic Republic</option>
+                            <option value="LV">Latvia</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libya</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lithuania</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MO">Macao</option>
+                            <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MV">Maldives</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MQ">Martinique</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="MU">Mauritius</option>
+                            <option value="YT">Mayotte</option>
+                            <option value="MX">Mexico</option>
+                            <option value="FM">Micronesia, Federated States of</option>
+                            <option value="MD">Moldova, Republic of</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="ME">Montenegro</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MA">Morocco</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NL">Netherlands</option>
+                            <option value="NC">New Caledonia</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk Island</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="NO">Norway</option>
+                            <option value="OM">Oman</option>
+                            <option value="PK" selected>Pakistan</option>
+                            <option value="PW">Palau</option>
+                            <option value="PS">Palestinian Territory, Occupied</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
+                            <option value="PH">Philippines</option>
+                            <option value="PN">Pitcairn</option>
+                            <option value="PL">Poland</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="RE">Réunion</option>
+                            <option value="RO">Romania</option>
+                            <option value="RU">Russian Federation</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="BL">Saint Barthélemy</option>
+                            <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                            <option value="KN">Saint Kitts and Nevis</option>
+                            <option value="LC">Saint Lucia</option>
+                            <option value="MF">Saint Martin (French part)</option>
+                            <option value="PM">Saint Pierre and Miquelon</option>
+                            <option value="VC">Saint Vincent and the Grenadines</option>
+                            <option value="WS">Samoa</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">Sao Tome and Principe</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbia</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SG">Singapore</option>
+                            <option value="SX">Sint Maarten (Dutch part)</option>
+                            <option value="SK">Slovakia</option>
+                            <option value="SI">Slovenia</option>
+                            <option value="SB">Solomon Islands</option>
+                            <option value="SO">Somalia</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="GS">South Georgia and the South Sandwich Islands</option>
+                            <option value="SS">South Sudan</option>
+                            <option value="ES">Spain</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SR">Suriname</option>
+                            <option value="SJ">Svalbard and Jan Mayen</option>
+                            <option value="SZ">Swaziland</option>
+                            <option value="SE">Sweden</option>
+                            <option value="CH">Switzerland</option>
+                            <option value="SY">Syrian Arab Republic</option>
+                            <option value="TW">Taiwan, Province of China</option>
+                            <option value="TJ">Tajikistan</option>
+                            <option value="TZ">Tanzania, United Republic of</option>
+                            <option value="TH">Thailand</option>
+                            <option value="TL">Timor-Leste</option>
+                            <option value="TG">Togo</option>
+                            <option value="TK">Tokelau</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad and Tobago</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="TR">Turkey</option>
+                            <option value="TM">Turkmenistan</option>
+                            <option value="TC">Turks and Caicos Islands</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="US">United States</option>
+                            <option value="UM">United States Minor Outlying Islands</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VE">Venezuela, Bolivarian Republic of</option>
+                            <option value="VN">Viet Nam</option>
+                            <option value="VG">Virgin Islands, British</option>
+                            <option value="VI">Virgin Islands, U.S.</option>
+                            <option value="WF">Wallis and Futuna</option>
+                            <option value="EH">Western Sahara</option>
+                            <option value="YE">Yemen</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4">     
+                        <label for="province">Domicile Province</label>
+                        <div class="form-group">
+                          <select class="form-control select2" style="width: 100%;" id="domicileprov" onchange="provchange()" required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>AJK</option>
+                            <option>Baluchistan</option>
+                            <option>FATA</option>
+                            <option>Gilgit Baltistan</option>
+                            <option>Islamabad</option>
+                            <option>KPK</option>
+                            <option>Punjab</option>
+                            <option>Sindh</option>
+                          </select>
+                        </div>                                      
+                      </div>  
+                                        
+                      <div class="col-sm-4">
+                        <label for="district">District</label>
+                        <div class="form-group">
+                          <select class="form-control select2" style="width: 100%;" required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>Abbottabad</option>
+                            <option>Attock</option>
+                            <option>Awaran</option>
+                            <option>Badin</option>
+                            <option>Bagh</option>
+                            <option>Bahawalnagar</option>
+                            <option>Bahawalpur</option>
+                            <option>Bajaur Agency</option>
+                            <option>Baltistan</option>
+                            <option>Bannu</option>
+                            <option>Barkhan</option>
+                            <option>Batagram</option>
+                            <option>Bhakkar</option>
+                            <option>Bhimber</option>
+                            <option>Bolan</option>
+                            <option>Bunner</option>
+                            <option>Chagai</option>
+                            <option>Chakwal</option>
+                            <option>Charsadda</option>
+                            <option>Chitral</option>
+                            <option>D.G. Khan</option>
+                            <option>D.I. Khan</option>
+                            <option>Dadu</option>
+                            <option>Dera Bughti</option>
+                            <option>Diamir</option>
+                            <option>Faisalabad</option>
+                            <option>Ghanchee</option>
+                            <option>Ghizer</option>
+                            <option>Ghotki</option>
+                            <option>Gilgit</option>
+                            <option>Gujranwala</option>
+                            <option>Gujrat</option>
+                            <option>Gwadar</option>
+                            <option>Hafizabad</option>
+                            <option>Hangu</option>
+                            <option>Haripur</option>
+                            <option>Hyderabad</option>
+                            <option>Jaffarabad</option>
+                            <option>Jaccobabad</option>
+                            <option>Jhal Magsi</option>
+                            <option>Jhang</option>
+                            <option>Jhelum</option>
+                            <option>Kalat</option>
+                            <option>Karachi Central</option>
+                            <option>Karachi East</option>
+                            <option>Karachi South</option>
+                            <option>Karachi West</option>
+                            <option>Karak</option>
+                            <option>Kasur</option>
+                            <option>Kech</option>
+                            <option>Khairpur</option>
+                            <option>Khanewal</option>
+                            <option>Kharan</option>
+                            <option>Khushab</option>
+                            <option>Khuzdar</option>
+                            <option>Khyber Agency</option>
+                            <option>Killa Abdullah</option>
+                            <option>Killa Saifullah</option>
+                            <option>Kohat</option>
+                            <option>Kohistan</option>
+                            <option>Kohlu</option>
+                            <option>Kotli</option>
+                            <option>Kurram Agency</option>
+                            <option>Lahore</option>
+                            <option>Lakki Marwat</option>
+                            <option>Larkana</option>
+                            <option>Lasbela</option>
+                            <option>Layyah</option>
+                            <option>Lodhran</option>
+                            <option>LoraLai</option>
+                            <option>Lower Dir</option>
+                            <option>Malakand</option>
+                            <option>Mandi Bahauddin</option>
+                            <option>Malir</option>
+                            <option>Mansehra</option>
+                            <option>Mardan</option>
+                            <option>Mastung</option>
+                            <option>Mianwali</option>
+                            <option>Mirpur</option>
+                            <option>Mirpurkhas</option>
+                            <option>Mohmand Agency</option>
+                            <option>Multan</option>
+                            <option>Musakhel</option>
+                            <option>Muzaffarabad</option>
+                            <option>Muzaffargarh</option>
+                            <option>Narowal</option>
+                            <option>Nasirabad</option>
+                            <option>Naushahro Feroze</option>
+                            <option>Nawab Shah</option>
+                            <option>North Waziristan Agency</option>
+                            <option>Nowshera</option>
+                            <option>Okara</option>
+                            <option>Orakzai Agency</option>
+                            <option>Pak Pattan</option>
+                            <option>Panjgur</option>
+                            <option>Pashin</option>
+                            <option>Peshawar</option>
+                            <option>Poonch</option>
+                            <option>Quetta</option>
+                            <option>Rahim Yar Khan</option>
+                            <option>Rajanpur</option>
+                            <option>Rawalpindi</option>
+                            <option>Sahiwal</option>
+                            <option>Sanghar</option>
+                            <option>Sargodha</option>
+                            <option>Shangla</option>
+                            <option>Sheikhupura</option>
+                            <option>Shikarpur</option>
+                            <option>Sialkot</option>
+                            <option>Sibi</option>
+                            <option>Sourth Waziristan Agency</option>
+                            <option>Sudhnoti</option>
+                            <option>Sukkur</option>
+                            <option>Swabi</option>
+                            <option>Tank</option>
+                            <option>Tharparkar</option>
+                            <option>Thatta</option>
+                            <option>Toba Tek Singh</option>
+                            <option>Umerkot</option>
+                            <option>Upper Dir</option>
+                            <option>Vehari</option>
+                            <option>Zhob</option>
+                            <option>Ziarat</option>  
+                          </select>
+                        </div>                                      
+                      </div>
+
+                    </div>  
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+		
+    <div id="program" class="content-wrapper" style="display: none">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Program Details</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#" style="color : #00897B">Home</a></li>
+                <li class="breadcrumb-item active">Program Details</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fas fa-graduation-cap"></i>&emsp;Program</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label>Programs Offered</label>
+                          <p align="justify">
+                            &nbsp;&#9638 &emsp;BBA<br>
+                            &nbsp;&#9638 &emsp;BSc Computer Science<br>
+                            &nbsp;&#9638 &emsp;BSc Electrical Engineering
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label for="firstpref">First Preference</label>
+                        <div class="form-group" data-toggle="popover" title="First Preference" data-placement="top" data-trigger="hover" data-content="Choose your preference carefully; as you will not be able to switch, once selected.">
+                          <select id="firstpref" class="form-control select2" style="width: 100%;">
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>BBA</option>
+                            <option>BSc Computer Science</option>
+                            <option>BSc Electrical Engineering</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label for="secondpref">Second Preference</label>
+                        <div class="form-group" data-toggle="popover" title="Second Preference" data-placement="top" data-trigger="hover" data-content="Choose your preference carefully; as you will not be able to switch, once selected.">
+                          <select id="secondpref" class="form-control select2" style="width: 100%;">
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>BBA</option>
+                            <option>BSc Computer Science</option>
+                            <option>BSc Electrical Engineering</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fab fa-buromobelexperte"></i>&emsp;Test Details</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="punjabtest">Test Name (Punjab Domiciled)</label>
+                        <div class="card bg-secondary text-white">
+                          <div class="card-body"> 
+                          &#9638 &nbsp;For BSc Electrical Engineering \ BSc Computer Science, only combined Entry Test 2018 coducted by UET Lahore is accepted.<br>
+                          &#9638 &nbsp;For BBA, either NAT-I 2018 (conducted by NTS) <strong>OR</strong> Combined Entry Test 2018 (conducted by UET Lahore) is accepted.<br>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control select2" style="width: 100%" disabled id="dompunjab">
+                            <option disabled selected hidden>Choose ...</option>
+                            <option value="NAT-I 2018(NTS) (For BBA Only) (100 Marks)">NAT-I 2018(NTS) (For BBA Only) (100 Marks)</option>
+                            <option value="UET Lahore Combined Entry Test 2018 (400 Marks)">UET Lahore Combined Entry Test 2018 (400 Marks)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="nonpunjabtest">Test Name (Non-Punjab Domiciled)</label>
+                        <div class="card bg-secondary text-white">
+                          <div class="card-body"> 
+                          For BSc Electrical Engineering \ BSc Computer Science \ BBA, following tests are accepted:<br>
+                          &#9638 &nbsp;NAT-I 2018 (conducted by NTS) &emsp;<strong>OR</strong><br> 
+                          &#9638 &nbsp;Test conducted by any public sector Engineering University<br>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control select2" style="width: 100%" id="domnonpunjab" onchange="nonpunjabtester()">
+                            <option disabled selected hidden>Choose ...</option>
+                            <option value="NAT-I 2018 (NTS) (100 Marks)">NAT-I 2018 (NTS) (100 Marks)</option>
+                            <option value="UET Lahore Combined Entry Test 2018 (400 Marks)">UET Lahore Combined Entry Test 2018 (400 Marks)</option>
+                            <option value="UET Peshawar Test 2018 (800 Marks)">UET Peshawar Test 2018 (800 Marks)</option>
+                            <option value="NED UET Karachi Test 2018 (100 Marks)">NED UET Karachi Test 2018 (100 Marks)</option>
+                            <option value="Mehran UET Jamshoro Test 2018 (100 Marks)">Mehran UET Jamshoro Test 2018 (100 Marks)</option>
+                            <option value="Balochistan UET Khuzdar Test 2018 (120 Marks)">Balochistan UET Khuzdar Test 2018 (120 Marks)</option>
+                            <option value="Enter test name ...">Other</option>                            
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6"></div>                     
+                      <div class="col-md-6">
+                        <label for="othertestname">Other Test</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-file-alt"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="othertestname" disabled placeholder="Enter test name ...">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="testrollnum">Test Roll Number</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="testrollnum" placeholder="Enter roll number ...">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="testmarks">Test Obtained Marks</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="testmarks" placeholder="Enter your marks ...">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+		
+    <div id="academic" class="content-wrapper" style="display: none">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Academic Qualification</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#" style="color : #00897B">Home</a></li>
+                <li class="breadcrumb-item active">Academic Qualification</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fas fa-user-graduate"></i>&emsp;Intermediate</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label for="titleInterQual">Title of Qualification</label>
+                        <div class="form-group" >
+                          <select id="selected-category"class="form-control select2" style="width: 100%!important; " required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option value="FSc: Pre-Engineering">FSc: Pre-Engineering</option>
+                            <option value="FSc: Pre-Medical">FSc: Pre-Medical</option>
+                            <option value="FSc: ICS">FSc: ICS with Math and Physics</option>
+                            <option value="A-Level">'A'-Level</option>
+                            <option value="DAE Holder">DAE Holder</option>
+                            <option value="FA">FA</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="qualStatus">Qualification Status</label>
+                        <div class="form-group" data-toggle="popover" title="Qualification Status" data-placement="top" data-trigger="hover" data-content="Choose 'In Progress', if you are waiting for last year result">
+                          <select class="form-control select2" id="qualStatus" style="width: 100%!important;" onchange="statusSelector()" required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>Completed</option>
+                            <option>In progress</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="studyYears">Study Year (Passed)</label>
+                        <div class="form-group" data-toggle="popover" title="Study Year Completed" data-placement="top" data-trigger="hover" data-content="Choose the study year, you have  passed">
+                          <select class="form-control select2" id="studyYears" style="width: 100%!important;" required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                          </select>
+                        </div>
+                      </div>                      
+                      <div class="col-md-3">
+                        <label for="interBoard">Board / University</label>
+                        <div class="form-group" >
+                          <select class="form-control select2" style="width: 100%!important;" id="interBoard" required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>BISE, Abbottabad</option>
+                            <option>BISE, Bahawalpur</option>
+                            <option>BISE, Bannu</option>
+                            <option>BISE, DG Khan</option>
+                            <option>BISE, DI Khan</option>
+                            <option>BISE, Faisalabad</option>
+                            <option>BISE, Gujranwala</option>
+                            <option>BISE, Hyderabad</option>
+                            <option>BISE, Kohat</option>
+                            <option>BISE, Lahore</option>
+                            <option>BISE, Larkana</option>
+                            <option>BISE, Malakand</option>
+                            <option>BISE, Mardan</option>
+                            <option>BISE, Mirpur Khas</option>
+                            <option>BISE, Multan</option>
+                            <option>BISE, Peshawar</option>
+                            <option>BISE, Quetta</option>
+                            <option>BISE, Rawalpindi</option>
+                            <option>BISE, Sahiwal</option>
+                            <option>BISE, Sargodha</option>
+                            <option>BISE, Swat</option>
+                            <option>BISE, Turbat</option>
+                            <option>BISE, Zhob</option>
+                            <option>BISEn, Sukkur</option>
+                            <option>BSE, Karachi</option>
+                            <option>BIE, Karachi</option>
+                            <option>FBISE, Islamabad</option>
+                            <option>AJK BISE, Mirpur</option>
+                            <option>Gilgit Baltistan BISE Karakurum</option>
+                            <option>Punjab BTE, Lahore</option>
+                            <option>Khyber Pakhtunkhwa BTE, Peshawar</option>
+                            <option>Sindh BTE, Karachi</option>
+                            <option>Baluchistan TEB, Quetta</option>
+                            <option>Cambridge IGCSE</option>
+                            <option>Pearson Edexcel GCSEs</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card bg-secondary text-white">
+                          <div class="card-body"> 
+                          &#9638 &nbsp;If your Intermediate\DAE\equivalent qualification is completed, please provide total marks.<br>
+                          &#9638 &nbsp;If awaiting for Intermediate 2nd year result, please provide 1st year marks.<br>
+                          &#9638 &nbsp;If awaiting for DAE 3rd year result, please provide total marks of completed two years.<br>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="inter1rollnum">Roll Number</label>
+                        <div class="form-group">
+                          <div class="input-group" data-toggle="popover" title="Hint" data-placement="bottom" data-trigger="hover" data-content="Provide roll number of study year, you have passed">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input name="rollnumber" type="text" class="form-control" id="inter1rollnum">
+                          </div>
+                        </div>
+                      </div> 
+                      <div class="col-sm-2">
+                        <label for="inter1totalmarks">Total Marks</label>
+                        <div class="form-group">
+                          <div class="input-group" data-toggle="popover" title="Hint" data-placement="bottom" data-trigger="hover" data-content="Provide total marks of study year, you have passed">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input name="totalmarks" type="text" class="form-control" id="inter1totalmarks">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <label for="inter1obtmarks">Obtained Marks</label>
+                        <div class="form-group">
+                          <div class="input-group" data-toggle="popover" title="Hint" data-placement="bottom" data-trigger="hover" data-content="Provide obtained marks out of 'Total Marks'">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input name="obtainedmarks" type="text" class="form-control" id="inter1obtmarks">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <label for="inter1passyear">Passing Year</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            <input name="year" type="text" class="form-control" id="inter1passyear">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <label for="inter2rollnum">Roll Number (Last Year)</label>
+                        <div class="form-group">
+                          <div class="input-group" data-toggle="popover" title="Hint" data-placement="bottom" data-trigger="hover" data-content="Provide roll number of final study year i.e. 2nd year (Intermediate), 3rd year (DAE)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input name="rollnumber" type="text" class="form-control" id="inter2rollnum">
+                          </div>
+                        </div>
+                      </div>                      
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <label for="interSubj">Please mention the major subjects/technologies, you have studied in your intermediate:</label> 
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-book-open"></i></span>
+                          </div>
+                          <textarea class="form-control" rows="1" id="interSubj" placeholder="e.g. Math, Physics, Chemistry etc. DAE holders should only provide their major technology e.g. Mechanical Technology."></textarea>
+                        </div>                                        
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fas fa-user-graduate"></i>&emsp;Matriculation</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                  <div class="card-body">
+                    <div class="row">
+                      
+                      <div class="col-md-4">
+                        <label for="matBoard">Board / University</label>
+                        <div class="form-group" >
+                          <select class="form-control select2" style="width: 100%!important;" id="matBoard" required>
+                            <option disabled selected hidden>Choose ...</option>
+                            <option>BISE, Abbottabad</option>
+                            <option>BISE, Bahawalpur</option>
+                            <option>BISE, Bannu</option>
+                            <option>BISE, DG Khan</option>
+                            <option>BISE, DI Khan</option>
+                            <option>BISE, Faisalabad</option>
+                            <option>BISE, Gujranwala</option>
+                            <option>BISE, Hyderabad</option>
+                            <option>BISE, Kohat</option>
+                            <option>BISE, Lahore</option>
+                            <option>BISE, Larkana</option>
+                            <option>BISE, Malakand</option>
+                            <option>BISE, Mardan</option>
+                            <option>BISE, Mirpur Khas</option>
+                            <option>BISE, Multan</option>
+                            <option>BISE, Peshawar</option>
+                            <option>BISE, Quetta</option>
+                            <option>BISE, Rawalpindi</option>
+                            <option>BISE, Sahiwal</option>
+                            <option>BISE, Sargodha</option>
+                            <option>BISE, Swat</option>
+                            <option>BISE, Turbat</option>
+                            <option>BISE, Zhob</option>
+                            <option>BISEn, Sukkur</option>
+                            <option>BSE, Karachi</option>
+                            <option>BIE, Karachi</option>
+                            <option>FBISE, Islamabad</option>
+                            <option>AJK BISE, Mirpur</option>
+                            <option>Gilgit Baltistan BISE Karakurum</option>
+                            <option>Punjab BTE, Lahore</option>
+                            <option>Khyber Pakhtunkhwa BTE, Peshawar</option>
+                            <option>Sindh BTE, Karachi</option>
+                            <option>Baluchistan TEB, Quetta</option>
+                            <option>Cambridge IGCSE</option>
+                            <option>Pearson Edexcel GCSEs</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>                      
+                      <div class="col-sm-2">
+                        <label for="matrollnum">Roll Number</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="matrollnum" name="rollnumber">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <label for="mattotalmarks">Total Marks</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="mattotalmarks" name="totalmarks">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <label for="matobtmarks">Obtained Marks</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fas fa-hashtag"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="matobtmarks" name="obtainedmarks">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <label for="matpassyear">Passing Year</label>
+                        <div class="form-group">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="matpassyear" name="year">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+  <!-- /.content -->
+    </div>
+		
+    <div id="submitform" class="content-wrapper" style="display: none">
+			<!-- Content Header (Page header) -->
+			  <section class="content-header">
+				<div class="container-fluid">
+				  <div class="row mb-2">
+					<div class="col-sm-6">
+					  <h1>Submit Form</h1>
+					</div>
+					<div class="col-sm-6">
+					  <ol class="breadcrumb float-sm-right">
+						<li class="breadcrumb-item"><a href="#" style="color : #00897B">Home</a></li>
+						<li class="breadcrumb-item active">Submit</li>
+					  </ol>
+					</div>
+				  </div>
+				</div><!-- /.container-fluid -->
+			  </section>
+
+			  <!-- Main content -->
+			    <section class="content">
+					<div class="container-fluid">
+						<div class="row">
+						  <div class="col-sm-12">
+							<p>Please review your form for any errors and missing fields before submission.</p>
+						  </div>
+						</div>
+						<div class="row">
+						  <div class="col-sm-12">
+							<button class="btn" type="submit" style="background-color: #00897B; color: white">Submit</button>
+						  </div>
+						</div>
+					</div>
+				</section>
+    </div>
+	</form>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-sm-none d-md-block">
+      Shaping Those Who Shape The Future
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; <a href="https://www.namal.edu.pk" style="color : #00897B">Namal College, Mianwali </a>|</strong> Namal Development Cell.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../plugins/bootstrapvalidator/js/bootstrapValidator.min.js"></script>
+<!-- Select2 -->
+<script src="../../plugins/select2/select2.full.min.js"></script>
+<!-- date-range-picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="../../plugins/iCheck/icheck.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script src="../../dist/js/logical_jumps.js"></script>
+<script>
+// $(document).ready(function(){
+//     $('[data-toggle="popover"]').popover();
+// },
+$(document).ready(function() {
+    $('#main-form').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            username: {
+                message: 'The name is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The name must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The name can only consist of alphabetical, number and underscore'
+                    }
+                }
+            },
+            cnic: {
+                message: 'The cnic is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'The cnic is required and cannot be empty '
+                    },
+                    stringLength: {
+                        min: 13,
+                        max: 13,
+                        message: 'The cnic must 13 characters long '
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'The cnic can only consist of numbers '
+                    }
+                }
+            },
+            
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email is required and cannot be empty'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
+                    }
+                }
+            },
+            birthday: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date of birth is required'
+                    },
+                    date: {
+                        format: 'MM/DD/YYYY',
+                        message: 'The date of birth is not valid'
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required'
+                    }
+                }
+            },
+            phone:{
+              validators: {
+                    notEmpty: {
+                        message: 'The phone number is required'
+                    },
+                    stringLength: {
+                        min: 11,
+                        max: 11,
+                        message: 'The phone number must 11 characters long '
+                    },
+                    regexp: {
+                        regexp: /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/,
+                        message: 'The phone number only consist of numbers '
+                    }
+                }
+
+            },
+            address:{
+              validators: {
+                notEmpty: {
+                        message: 'The address is required'
+                    }
+              }
+            },
+            rollnumber:{
+              validators: {
+                notEmpty: {
+                        message: 'The address is required'
+                    },
+                    between: {
+                        min: 0,
+                        max: 2018,
+                        message: 'The year total marks be between 1990 and 2018'
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'The roll number can only consist of numbers '
+                    }
+              }
+            },
+            obtainedmarks:{
+              validators: {
+                notEmpty: {
+                        message: 'The obtained marks are required'
+                    },
+                    between: {
+                        min: 0,
+                        max: 2018,
+                        message: 'The year total marks be between 1990 and 2018'
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'The obtained marks can only consist of numbers '
+                    }
+              }
+            },
+            totalmarks:{
+              validators: {
+                notEmpty: {
+                        message: 'The total marks are required'
+                    },
+                    between: {
+                        min: 0,
+                        max: 2018,
+                        message: 'The year total marks be between 1990 and 2018'
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'The total marks can only consist of numbers '
+                    }
+              }
+            },
+            year:{
+              validators: {
+                notEmpty: {
+                        message: 'The total marks are required'
+                    },
+                    between: {
+                        min: 1990,
+                        max: 2018,
+                        message: 'The year must be between 1990 and 2018'
+                    },
+                    regexp: {
+                        regexp: /^[0-9_]+$/,
+                        message: 'The total marks can only consist of numbers '
+                    }
+              }
+            }
+
+        }
+    });
+});
+</script>
+<!-- Page script -->
+<!--Selecting diff forms-->
+</body>
+</html>
+ 
